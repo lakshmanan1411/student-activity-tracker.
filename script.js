@@ -1,3 +1,4 @@
+let currentFilter = "all";
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
 function saveTasks() {
@@ -35,7 +36,15 @@ function renderTasks() {
     let completedCount = 0;
 
     tasks.forEach((task, index) => {
+
         if (task.completed) completedCount++;
+
+        if (
+            currentFilter === "completed" && !task.completed ||
+            currentFilter === "pending" && task.completed
+        ) {
+            return;
+        }
 
         const li = document.createElement("li");
         li.className = task.completed ? "completed" : "";
@@ -50,7 +59,6 @@ function renderTasks() {
 
     updateProgress(completedCount);
 }
-
 function updateProgress(completedCount) {
     const total = tasks.length;
     const progressText = document.getElementById("progressText");
@@ -61,5 +69,6 @@ function updateProgress(completedCount) {
     const percent = total === 0 ? 0 : (completedCount / total) * 100;
     progressFill.style.width = percent + "%";
 }
+
 
 renderTasks();
