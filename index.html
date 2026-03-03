@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Activity Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>📚 Student Activity Tracker</h1>
+        <p>Track your daily learning progress easily!</p>
+
+        <!-- Task Input -->
+        <div class="task-input">
+            <input type="text" id="taskInput" placeholder="Enter new task...">
+            <button onclick="addTask()">Add</button>
+        </div>
+
+        <!-- Progress -->
+        <div id="progressBox">
+            <h3 id="progressText">0 out of 0 completed</h3>
+            <div class="progress-bar">
+                <div id="progressFill"></div>
+            </div>
+        </div>
+
+        <!-- Task List -->
+        <ul id="activityList"></ul>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
