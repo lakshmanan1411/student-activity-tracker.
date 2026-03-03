@@ -16,16 +16,15 @@
 
         <p>Track your daily learning progress easily!</p>
 
+        <!-- 🔍 Search Box -->
+        <input type="text" id="searchInput" 
+               placeholder="Search tasks..." 
+               onkeyup="searchTask()">
+
         <!-- Task Input -->
         <div class="task-input">
             <input type="text" id="taskInput" placeholder="Enter new task...">
-
-            <select id="priorityInput">
-                <option value="High">High</option>
-                <option value="Medium">Medium</option>
-                <option value="Low">Low</option>
-            </select>
-
+            <input type="date" id="dueDate">
             <button onclick="addTask()">Add</button>
         </div>
 
