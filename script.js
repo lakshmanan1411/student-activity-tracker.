@@ -1,34 +1,45 @@
 let currentFilter = "all";
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
+// Save to LocalStorage
 function saveTasks() {
     localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
+// Add Task (with Priority)
 function addTask() {
     const input = document.getElementById("taskInput");
+    const priority = document.getElementById("priorityInput").value;
     const taskText = input.value.trim();
 
     if (taskText === "") return;
 
-    tasks.push({ text: taskText, completed: false });
+    tasks.push({
+        text: taskText,
+        completed: false,
+        priority: priority
+    });
+
     input.value = "";
     saveTasks();
     renderTasks();
 }
 
+// Toggle Complete
 function toggleTask(index) {
     tasks[index].completed = !tasks[index].completed;
     saveTasks();
     renderTasks();
 }
 
+// Delete Task
 function deleteTask(index) {
     tasks.splice(index, 1);
     saveTasks();
     renderTasks();
 }
 
+// Render Tasks
 function renderTasks() {
     const list = document.getElementById("activityList");
     list.innerHTML = "";
@@ -51,6 +62,7 @@ function renderTasks() {
 
         li.innerHTML = `
             <span onclick="toggleTask(${index})">${task.text}</span>
+            <span class="priority ${task.priority}">${task.priority}</span>
             <button onclick="deleteTask(${index})">❌</button>
         `;
 
@@ -59,6 +71,8 @@ function renderTasks() {
 
     updateProgress(completedCount);
 }
+
+// Update Progress
 function updateProgress(completedCount) {
     const total = tasks.length;
     const progressText = document.getElementById("progressText");
@@ -70,26 +84,38 @@ function updateProgress(completedCount) {
     progressFill.style.width = percent + "%";
 }
 
-
-renderTasks();
+// Filter
 function filterTasks(filter) {
     currentFilter = filter;
     renderTasks();
 }
+
+// Dark Mode
 function toggleDarkMode() {
     document.body.classList.toggle("dark");
 
+    const btn = document.getElementById("darkBtn");
+
     if (document.body.classList.contains("dark")) {
         localStorage.setItem("theme", "dark");
+        btn.textContent = "☀ Light Mode";
     } else {
         localStorage.setItem("theme", "light");
+        btn.textContent = "🌙 Dark Mode";
     }
 }
 
-window.onload = function() {
+// Load Theme on Start
+document.addEventListener("DOMContentLoaded", function () {
+    const btn = document.getElementById("darkBtn");
+
     if (localStorage.getItem("theme") === "dark") {
         document.body.classList.add("dark");
+        btn.textContent = "☀ Light Mode";
     }
-};
+
+    renderTasks();
+});
+
 
 
