@@ -70,3 +70,26 @@ li {
     margin: 5px;
     cursor: pointer;
 }
+#darkBtn {
+    margin: 10px 0;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+.dark {
+    background-color: #121212;
+    color: white;
+}
+
+.dark .container {
+    background-color: #1e1e1e;
+}
+
+.dark li {
+    background-color: #2a2a2a;
+}
+
+.dark .progress-bar {
+    background: #444;
+}
+
