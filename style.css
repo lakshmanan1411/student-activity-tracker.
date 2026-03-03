@@ -1,117 +1,41 @@
-body {
-    font-family: Arial, sans-serif;
-    background: #f4f6f9;
-    text-align: center;
+/* Fix input layout */
+.task-input input[type="text"] {
+    width: 45%;
 }
 
-.container {
-    max-width: 500px;
-    margin: 50px auto;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+.task-input input[type="date"] {
+    width: 35%;
 }
 
-.task-input {
-    margin: 20px 0;
-}
-
-.task-input input {
+/* Search Box */
+#searchInput {
+    width: 90%;
     padding: 8px;
-    width: 70%;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
 }
 
-.task-input button {
-    padding: 8px 12px;
-    cursor: pointer;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-}
-
+/* Improve task item look */
 li {
-    background: #f1f1f1;
-    margin: 8px 0;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    border-radius: 5px;
+    align-items: center;
 }
 
-.completed {
-    text-decoration: line-through;
-    color: gray;
-}
-
-.progress-bar {
-    width: 100%;
-    background: #ddd;
-    height: 20px;
-    border-radius: 10px;
-    overflow: hidden;
-    margin-top: 10px;
-}
-
-#progressFill {
-    height: 100%;
-    width: 0%;
-    background: #4CAF50;
-
-}
-.filters {
-    margin: 15px 0;
-}
-
-.filters button {
-    padding: 6px 10px;
-    margin: 5px;
-    cursor: pointer;
-}
-#darkBtn {
-    margin: 10px 0;
-    padding: 6px 10px;
-    cursor: pointer;
-}
-
-.dark {
-    background-color: #121212;
-    color: white;
-}
-
-.dark .container {
-    background-color: #1e1e1e;
-}
-
-.dark li {
-    background-color: #2a2a2a;
-}
-
-.dark .progress-bar {
-    background: #444;
-}
-/* Priority Badge */
+/* Priority Badge Fix */
 .priority {
-    padding: 3px 6px;
-    border-radius: 5px;
+    padding: 3px 8px;
+    border-radius: 6px;
     font-size: 12px;
     color: white;
-    margin-left: 10px;
+    margin-left: 8px;
+    display: inline-block;
+    font-weight: bold;
 }
 
-/* Priority Colors */
-.High {
-    background-color: red;
+/* Hover Effect */
+.task-input button:hover,
+.filters button:hover,
+#darkBtn:hover {
+    opacity: 0.8;
+    transition: 0.2s;
 }
-
-.Medium {
-    background-color: orange;
-}
-
-.Low {
-    background-color: green;
-}
-
-
