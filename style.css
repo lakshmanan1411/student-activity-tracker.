@@ -92,4 +92,26 @@ li {
 .dark .progress-bar {
     background: #444;
 }
+/* Priority Badge */
+.priority {
+    padding: 3px 6px;
+    border-radius: 5px;
+    font-size: 12px;
+    color: white;
+    margin-left: 10px;
+}
+
+/* Priority Colors */
+.High {
+    background-color: red;
+}
+
+.Medium {
+    background-color: orange;
+}
+
+.Low {
+    background-color: green;
+}
+
 
