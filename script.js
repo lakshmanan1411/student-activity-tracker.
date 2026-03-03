@@ -72,3 +72,8 @@ function updateProgress(completedCount) {
 
 
 renderTasks();
+function filterTasks(filter) {
+    currentFilter = filter;
+    renderTasks();
+}
+
