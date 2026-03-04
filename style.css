@@ -1,24 +1,107 @@
-/* Fix input layout */
-.task-input input[type="text"] {
-    width: 45%;
+/* Basic Reset & Container */
+body {
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+    margin: 0;
+    padding: 20px;
+    background-color: #f9f9f9;
 }
 
-.task-input input[type="date"] {
-    width: 35%;
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Fix input layout */
+.task-input {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.task-input input[type="text"] {
+    width: 45%;
+    padding: 8px;
+}
+
+.task-input input[type="date"], .task-input select {
+    width: 25%;
+    padding: 8px;
+}
+
+.task-input button, .filters button, #darkBtn {
+    padding: 8px 12px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+}
+
+#darkBtn {
+    background-color: #333;
+    margin-bottom: 15px;
 }
 
 /* Search Box */
 #searchInput {
-    width: 90%;
+    width: 96%;
     padding: 8px;
     margin-bottom: 15px;
     border-radius: 6px;
     border: 1px solid #ccc;
 }
 
+/* Filters */
+.filters {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+/* Progress Bar */
+.progress-bar {
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 10px;
+    height: 15px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+#progressFill {
+    height: 100%;
+    width: 0%;
+    background-color: #28a745;
+    transition: width 0.3s ease;
+}
+
+/* Task List Styles */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
 /* Improve task item look */
 li {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
+    background: #eee;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+}
+
+/* Completed Task Style */
+.completed .task-text {
+    text-decoration: line-through;
+    color: #888;
+    opacity: 0.7;
 }
 
 /* Priority Badge Fix */
@@ -30,6 +113,18 @@ li {
     margin-left: 8px;
     display: inline-block;
     font-weight: bold;
+    background-color: #ff9800; /* Default color */
+}
+
+/* Action Buttons */
+.action-btns button {
+    margin-left: 5px;
+    padding: 5px 8px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    background-color: #fff;
+    color: black;
 }
 
 /* Hover Effect */
@@ -39,6 +134,7 @@ li {
     opacity: 0.8;
     transition: 0.2s;
 }
+
 /* DARK MODE */
 .dark {
     background-color: #121212;
@@ -47,6 +143,7 @@ li {
 
 .dark .container {
     background-color: #1e1e1e;
+    box-shadow: 0 4px 8px rgba(255,255,255,0.1);
 }
 
 .dark li {
@@ -57,14 +154,18 @@ li {
     background: #444;
 }
 
-.dark input {
+.dark input, .dark select {
     background-color: #333;
     color: white;
     border: 1px solid #555;
 }
 
 .dark button {
-    background-color: #333;
+    background-color: #444;
     color: white;
 }
 
+.dark .action-btns button {
+    background-color: #555;
+    color: white;
+}
