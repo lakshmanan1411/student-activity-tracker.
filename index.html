@@ -11,31 +11,31 @@
     <div class="container">
         <h1>📚 Student Activity Tracker</h1>
 
-        <!-- Dark Mode Button -->
         <button onclick="toggleDarkMode()" id="darkBtn">🌙 Dark Mode</button>
 
         <p>Track your daily learning progress easily!</p>
 
-        <!-- 🔍 Search Box -->
         <input type="text" id="searchInput" 
                placeholder="Search tasks..." 
                onkeyup="searchTask()">
 
-        <!-- Task Input -->
         <div class="task-input">
             <input type="text" id="taskInput" placeholder="Enter new task...">
             <input type="date" id="dueDate">
+            <select id="priorityInput">
+                <option value="High">🔴 High</option>
+                <option value="Medium">🟡 Medium</option>
+                <option value="Low">🟢 Low</option>
+            </select>
             <button onclick="addTask()">Add</button>
         </div>
 
-        <!-- Filters -->
         <div class="filters">
             <button onclick="filterTasks('all')">All</button>
             <button onclick="filterTasks('completed')">Completed</button>
             <button onclick="filterTasks('pending')">Pending</button>
         </div>
 
-        <!-- Progress -->
         <div id="progressBox">
             <h3 id="progressText">0 out of 0 completed</h3>
             <div class="progress-bar">
@@ -43,7 +43,6 @@
             </div>
         </div>
 
-        <!-- Task List -->
         <ul id="activityList"></ul>
 
     </div>
