@@ -39,3 +39,32 @@ li {
     opacity: 0.8;
     transition: 0.2s;
 }
+/* DARK MODE */
+.dark {
+    background-color: #121212;
+    color: white;
+}
+
+.dark .container {
+    background-color: #1e1e1e;
+}
+
+.dark li {
+    background-color: #2a2a2a;
+}
+
+.dark .progress-bar {
+    background: #444;
+}
+
+.dark input {
+    background-color: #333;
+    color: white;
+    border: 1px solid #555;
+}
+
+.dark button {
+    background-color: #333;
+    color: white;
+}
+
